@@ -1,4 +1,8 @@
+@font-face { font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf');}
+
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -12,9 +16,110 @@ body {
   align-items: center;
   height: 100vh;
   font-family: open sans;
-  color: #10214e;
+  /*background-color:hsla(225,20%,7%,1);
+  background-image:
+  radial-gradient(at 29% 38%, hsla(222,28%,30%,1) 0px, transparent 50%),
+  radial-gradient(at 98% 76%, hsla(2,38%,31%,1) 0px, transparent 50%),
+  radial-gradient(at 97% 0%, hsla(193,42%,34%,1) 0px, transparent 50%),
+  radial-gradient(at 12% 1%, hsla(342,41%,44%,1) 0px, transparent 50%),
+  radial-gradient(at 14% 86%, hsla(2,52%,31%,1) 0px, transparent 50%),
+  radial-gradient(at 71% 86%, hsla(244,41%,44%,1) 0px, transparent 50%);*/
+  background:
+radial-gradient(at 32% 84%, hsla(234,60%,64%,1) 0px, transparent 50%),
+radial-gradient(at 81% 63%, hsla(241,74%,65%,1) 0px, transparent 50%),
+radial-gradient(at 14% 50%, hsla(224,91%,65%,1) 0px, transparent 50%),
+radial-gradient(at 69% 46%, hsla(258,91%,61%,1) 0px, transparent 50%),
+radial-gradient(at 11% 56%, hsla(307,88%,75%,1) 0px, transparent 50%),
+radial-gradient(at 78% 16%, hsla(299,95%,79%,1) 0px, transparent 50%);
+  background-size: cover;
+  overflow: hidden;
 }
 
+.gezichten {
+  animation: gezichten 2s infinite alternate ease-in-out;
+  transition: transform .2s ease-in-out;
+}
+
+.gezichten:hover {
+  transform: scale(1.1);
+  animation: none;
+}
+
+@keyframes gezichten {
+  0% {
+    rotate: -5deg;
+  }
+
+  100% {
+    rotate: 5deg;
+  }
+}
+
+#lach_lach {
+  animation: lach_lach 10s infinite;
+}
+
+#dicht_lach {
+  animation: dicht_lach 10s infinite;
+  margin-left: -404px;
+}
+
+@keyframes lach_lach {
+  0% {
+    opacity: 100%;
+  }
+
+  25% {
+    opacity: 100%;
+  }
+  44% {
+    opacity: 100%;
+
+  }
+
+  45% {
+    opacity: 0%;
+
+  }
+
+  46% {
+    opacity: 0%;
+
+  }
+
+  47% {
+    opacity: 100%;
+
+  }
+
+  74% {
+    opacity: 100%;
+
+  }
+
+  75% {
+    opacity: 0%;
+
+  }
+
+  76% {
+    opacity: 0%;
+
+  }
+
+  77% {
+    opacity: 100%;
+
+  }
+  
+  100% {
+      opacity: 100%;
+  }
+
+
+}
+
+/*
 article {
   position: relative;
   display: flex;
@@ -41,7 +146,7 @@ header {
 
 h1 {
   margin: 2rem 0 1rem;
-  font-family: open sans;
+  font-family: ChemnitzCentral, sans-serif;
   font-size: 50px;
   line-height: 1em;
   color: rgba(0,239,255,1);
