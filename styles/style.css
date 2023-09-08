@@ -9,20 +9,24 @@
   src: url(fonts/Handschrift2-Regular.ttf);
 }
 
+/* * is voor alles, ik wil nergens onverwachte padding of margin hebben dus daarom is dit 0*/
+/* border-box geeft alleen de (width, height) waardes die jij wilt (in verschillende browsers is het anders bijvoorbeeld)*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* height 100vh bedekt de hele hoogte van je pagina */
 html {
   height: 100vh;
 }
 
+/*body is alles wat je op je website ziet*/
 body {
   height: 100vh;
   background-color:hsla(225,20%,7%,1);
-
+  /*mesh gradient, met radial gradient gedaan*/
   background:
   radial-gradient(at 32% 84%, hsla(234,60%,64%,1) 0px, transparent 50%),
   radial-gradient(at 81% 63%, hsla(241,74%,65%,1) 0px, transparent 50%),
@@ -32,35 +36,35 @@ body {
   radial-gradient(at 78% 16%, hsla(299,95%,79%,1) 0px, transparent 50%);
 
   background-color: rgba(47, 31, 61, 0.10);
-
+  /*cover bedekt het hele gebied waar de background-image in zit*/
   background-size: cover;
-
+  /*overflow: hidden; is dat dingen in je box niet eruit kan gaan*/
   overflow: hidden;
 }
 
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1000px;
-  margin-top: 10vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex; /* met layout te maken, dingen links van elkaar zetten b.v*/
+  flex-wrap: wrap; /* met responsive te maken */
+  width: 1000px; /* breedte , sorry heb pixels gebruikt */
+  margin-top: 10vh; /* witruimte buiten je box */
+  justify-content: center; /*centreren*/
+  align-items: center;/*centreren*/
+  text-align: center;/*centreren*/
+  margin-left: auto;/*centreren*/
+  margin-right: auto;/*centreren*/
 }
 
-header {
-  font-family: "handschrift2", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2.5em;
-  text-transform: uppercase;
+header { /*header, boven*/
+  font-family: "handschrift2", sans-serif; /* eigen handschrift, gelinkt met @fontface */
+  font-weight: 400; /* boldness van het font */
+  font-style: normal; /*kan schuin of normaal maken, in dit geval normaal*/
+  font-size: 2.5em; /* groote tekst */
+  text-transform: uppercase; /* capitalen */
 
 }
 
 header h1 {
-  background-image: url(images/background_h1.png);
+  background-image: url(images/background_h1.png); /* afbeelding achter header 1 */
   background-size: cover;
 }
 
@@ -80,7 +84,7 @@ content {
   text-align: center;
   margin: 1%;
   padding: 2.5em;
-  position: relative;
+  position: relative; /* voor absolute elementen in de box */
   box-sizing: border-box;
 
 }
@@ -103,10 +107,10 @@ content {
   background-image: url(images/lach_lach.png);
   background-size: cover;
   
-  transition: all 0.3s ease;
-  animation: blink 5s infinite;
+  transition: all 0.3s ease; /* "animeren" van iets dat beweegt, in dit geval bij hover en animatie */
+  animation: blink 5s infinite; /* gelinkt met @keyframes, naam tijd repeat */
   z-index: 100;
-  opacity: 98%;
+  opacity: 98%; /* afbeelding is een beetje doorzichtig nu */
 }
 
 .border_laptop {
