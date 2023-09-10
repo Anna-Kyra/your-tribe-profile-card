@@ -24,6 +24,8 @@ html {
 
 /*body is alles wat je op je website ziet*/
 body {
+  display: flex;
+  align-items: center;
   height: 100vh;
   background-color:hsla(225,20%,7%,1);
   /*mesh gradient, met radial gradient gedaan*/
@@ -46,7 +48,6 @@ body {
   display: flex; /* met layout te maken, dingen links van elkaar zetten b.v*/
   flex-wrap: wrap; /* met responsive te maken */
   width: 1000px; /* breedte , sorry heb pixels gebruikt */
-  margin-top: 10vh; /* witruimte buiten je box */
   justify-content: center; /*centreren*/
   align-items: center;/*centreren*/
   text-align: center;/*centreren*/
@@ -54,21 +55,22 @@ body {
   margin-right: auto;/*centreren*/
 }
 
-header { /*header, boven*/
+.header { /*header, boven*/
   font-family: "handschrift2", sans-serif; /* eigen handschrift, gelinkt met @fontface */
   font-weight: 400; /* boldness van het font */
   font-style: normal; /*kan schuin of normaal maken, in dit geval normaal*/
-  font-size: 2.5em; /* groote tekst */
+  font-size: 3em; /* groote tekst */
   text-transform: uppercase; /* capitalen */
 
 }
 
-header h1 {
+.header h1 {
   background-image: url(images/background_h1.png); /* afbeelding achter header 1 */
   background-size: cover;
+  margin-bottom: 0.5em;
 }
 
-content {
+.content {
   display: flex;
   flex-wrap: wrap;
   width: 1000px;
@@ -78,15 +80,20 @@ content {
 
 #left {
   width: 48%;
-  height: 50vh;
   justify-content: center;
   align-items: center;
   text-align: center;
   margin: 1%;
   padding: 2.5em;
-  position: relative; /* voor absolute elementen in de box */
-  box-sizing: border-box;
+  cursor: pointer;
 
+}
+
+#left:hover .gezicht {
+  rotate: 10deg;
+  transition: none;
+  animation-timing-function: linear; /* transitie is meer statig (stagato) */
+  animation: quick_rotate 0.5s infinite;
 }
 
 .border_gezicht {
@@ -137,7 +144,7 @@ content {
 .gezicht:hover {
   rotate: 10deg;
   transition: none;
-  animation-timing-function: linear;
+  animation-timing-function: linear; /* transitie is meer statig (stagato) */
   animation: quick_rotate 0.5s infinite;
 }
 
@@ -146,6 +153,11 @@ content {
   transition: none;
   animation-timing-function: linear;
   animation: quick_rotate 0.5s infinite;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
 }
 
 @keyframes quick_rotate {
@@ -225,8 +237,6 @@ content {
   100% {
     background-image: url('images/lach_lach.png');
   }
-
-
 }
 
 .top {
@@ -240,15 +250,16 @@ content {
   transform: scaleX(-1);
   width: 200px;
   rotate: 20deg;
-  margin: 1em 0 0 -5em;
+  margin: 1em 0 0 -10em;
+  animation: quick_rotate 0.5s infinite;
 }
 
 .wat_kan_ik img {
   width: 200px;
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
-  rotate: 30deg;
-  margin: 0 7em -2em 0;
+  margin: 0 0 -2em 0;
+  animation: quick_rotate 0.5s infinite;
 }
 
 /*heb mijn eigen font gemaakt en gebruikt*/
@@ -257,10 +268,12 @@ content {
   font-weight: 400;
   font-style: normal;
   font-size: 3em;
-  text-align: left;
-  rotate: -10deg;
+  rotate: -4deg;
   color: #171717;
   text-decoration: none;
+  background-image: url(images/background_h1.png); /* afbeelding achter header 1 */
+  background-size: cover;
+  filter: hue-rotate(90deg) brightness(0.85);
 }
 
 .wat_kan_ik h1 {
@@ -271,20 +284,28 @@ content {
   font-size: 3em;
   rotate: -5deg;
   color: #171717;
+  background-image: url(images/background_h1.png); /* afbeelding achter header 1 */
+  background-size: cover;
+  filter: hue-rotate(90deg) brightness(0.85);
 }
 
  h1 span {
-  text-decoration: underline;
-  text-decoration-color: green;
+  font-weight: bold;
 }
 
 #right {
   width: 48%;
-  height: 50vh;
   margin: 1%;
   padding: 2.5em;
   justify-content: center;
   text-align: center;
+}
+
+#right:hover .laptop {
+  rotate: 10deg;
+  transition: none;
+  animation-timing-function: linear; /* transitie is meer statig (stagato) */
+  animation: quick_rotate 0.5s infinite;
 }
 
 @keyframes gezichten {
@@ -297,69 +318,38 @@ content {
   }
 }
 
-#lach_lach {
-  animation: lach_lach 10s infinite;
-}
-
-#dicht_lach {
-  animation: dicht_lach 10s infinite;
-  margin-left: -404px;
-}
-
-@keyframes lach_lach {
-  0% {
-    opacity: 100%;
-  }
-
-  25% {
-    opacity: 100%;
-  }
-  44% {
-    opacity: 100%;
-
-  }
-
-  45% {
-    opacity: 0%;
-
-  }
-
-  46% {
-    opacity: 0%;
-
-  }
-
-  47% {
-    opacity: 100%;
-
-  }
-
-  74% {
-    opacity: 100%;
-
-  }
-
-  75% {
-    opacity: 0%;
-
-  }
-
-  76% {
-    opacity: 0%;
-
-  }
-
-  77% {
-    opacity: 100%;
-
-  }
-  
-  100% {
-      opacity: 100%;
-  }
-
+/* Wie is Anna-Kyra */
+#center {
+  width: 48%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 1%;
+  padding: 2.5em;
+  cursor: pointer;
 
 }
+/*Wat kan Anna-Kyra */
+.scroll {
+  width: 575px;
+  height: 365px;
+  background-color: #EEEAFF;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  padding: 1em;
+  text-align: left;
+  overflow: hidden;
+}
+
+.scroll h2 {
+  font-family: "handschrift2", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3em;
+}
+
+
 /* expand content */
 body.expand {
   font-size: 1.15em;
