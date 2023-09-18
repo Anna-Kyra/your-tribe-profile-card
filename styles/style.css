@@ -9,7 +9,7 @@
   src: url(fonts/Handschrift2-Regular.ttf);
 }
 
-/* * is voor alles, ik wil nergens onverwachte padding of margin hebben dus daarom is dit 0*/
+/* Is voor alles, ik wil nergens onverwachte padding of margin hebben dus daarom is dit 0*/
 /* border-box geeft alleen de (width, height) waardes die jij wilt (in verschillende browsers is het anders bijvoorbeeld)*/
 * {
   padding: 0;
@@ -55,7 +55,7 @@ body {
   margin-right: auto;/*centreren*/
 }
 
-.header { /*header, boven*/
+header { /*header, boven*/
   font-family: "handschrift2", sans-serif; /* eigen handschrift, gelinkt met @fontface */
   font-weight: 400; /* boldness van het font */
   font-style: normal; /*kan schuin of normaal maken, in dit geval normaal*/
@@ -64,13 +64,13 @@ body {
 
 }
 
-.header h1 {
+h1 {
   background-image: url(images/background_h1.png); /* afbeelding achter header 1 */
   background-size: cover;
   margin-bottom: 0.5em;
 }
 
-.content {
+main {
   display: flex;
   flex-wrap: wrap;
   width: 1000px;
@@ -263,7 +263,7 @@ a {
 }
 
 /*heb mijn eigen font gemaakt en gebruikt*/
-.wie_ben_ik h1 {
+.wie_ben_ik h2 {
   font-family: "handschrift2", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -276,7 +276,7 @@ a {
   filter: hue-rotate(90deg) brightness(0.85);
 }
 
-.wat_kan_ik h1 {
+.wat_kan_ik h2 {
   margin: 1em 0 0 0;
   font-family: "handschrift2", sans-serif;
   font-weight: 400;
@@ -289,7 +289,7 @@ a {
   filter: hue-rotate(90deg) brightness(0.85);
 }
 
- h1 span {
+ h2 span {
   font-weight: bold;
 }
 
